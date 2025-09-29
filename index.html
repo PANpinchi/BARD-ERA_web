@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>BARD-ERA</title>
+        <!-- Bootstrap css js jquery-->
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <script src="https://use.fontawesome.com/7bdf6b5116.js"></script>
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top" style="overflow-x: hidden;">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a id="title" class="navbar-brand" href="#page-top">
+                    <h6 class="title_size" style="font-weight: bolder; padding-top: 0.3125rem; padding-bottom: 0.3125rem;">BARD-ERA</h6>
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#page-top">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#abstract">Abstract</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experiments">Experiments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#references">References</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#citation">Citation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead -->
+        <header id="masthead" class="masthead">
+            <div class="container px-4 px-lg-5 h-100" >
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h2 class="h2_size" style="color: white; font-weight: bolder;">Boundary-Aware Refinement with</h2>
+                        <h2 class="h2_size" style="color: white; font-weight: bolder;">Environment-Robust Adapter Tuning</h2>
+                        <h2 class="h2_size" style="color: white; font-weight: bolder;"> for Underwater Instance Segmentation</h2>
+                        <h6 class="h6_size" style="margin-top: 1rem; margin-bottom: 1rem;">
+                            <a href="#" style="text-decoration: none; margin-right: 2rem; margin-left: 3rem;">Pin-Chi Pan<sup> 1</sup></a>  
+                            <a href="#" style="text-decoration: none; margin-right: 2rem;">Soo-Chang Pei<sup> 2</sup></a>
+                        </h6>
+                        <h6 class="h6_size" style="color: white; margin-bottom: 1rem;"><sup>1</sup> Graduate Institute of Communication Engineering, National Taiwan University, Taiwan</h6>
+                        <h6 class="h6_size" style="color: white; margin-bottom: 1rem;"><sup>2</sup> Department of Electrical Engineering, National Taiwan University, Taiwan</h6>
+                        <h6 class="h6_size" style="margin-bottom: 1rem;">
+                            <a href="#" style="text-decoration: none; margin-right: 2rem;" target="_blank"> [Paper] </a>
+                            <a href="#" style="text-decoration: none;" target="_blank"> [Code] </a>
+                        </h6>
+                        <h6 class="h6_size" style="color: white; margin-bottom: 1rem;">【This Paper has been accepted by ACML 2025】</h6>
+                        <a class="btn btn-light" style="border-radius: 30px;" href="#abstract">
+                            <h6 class="btn_size" style="font-weight: bolder;">more</h6>
+                        </a>
+                    </div>
+                    <div class="col-lg-8 align-self-baseline"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Abstract -->
+        <section class="page-section" style="background-color: #ffffff;" id="abstract">
+            <div class="container px-4 px-lg-5 h-100" >
+                <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                        <h2>Abstract</h2>
+                    </div>
+                </div>
+                <div style="height: 1rem;"></div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <canvas id="pdf-canvas-3" style="width: 100%;"></canvas>
+                        <h6>
+                            <i class="abstract_size">
+                                <strong>Fig. 3.</strong>The architecture of the proposed BARDecoder for underwater instance segmentation.
+                            </i>
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                
+                <div style="height: 1rem;"></div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            Underwater instance segmentation is a challenging task due to adverse visual conditions such as light attenuation, scattering, and color distortion, 
+                            which severely degrade image quality and hinder model performance. 
+                            In this work, we propose BARD-ERA, a unified framework that integrates three novel components to address these challenges. 
+                            First, the Boundary-Aware Refinement Decoder (BARDecoder) improves mask quality through progressive feature refinement and lightweight upsampling 
+                            using a Multi-Stage Gated Refinement Network and Depthwise Separable Upsampling. 
+                            Second, the Environment-Robust Adapter (ERA) enables efficient adaptation to underwater degradations by injecting environment-specific priors 
+                            with over 90% fewer trainable parameters than full fine-tuning. 
+                            Third, the Boundary-Aware Cross-Entropy (BACE) loss enhances boundary supervision by leveraging range-null space decomposition. 
+                            Together, these modules achieve state-of-the-art performance on the UIIS dataset, 
+                            surpassing Mask R-CNN by 3.4 mAP with Swin-B and 3.8 mAP with ConvNeXt V2-B, while maintaining a compact model size. 
+                            Our results demonstrate that BARD-ERA enables robust, accurate, and efficient segmentation in complex underwater scenes.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <div style="height: 1rem;"></div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-6">
+                                <canvas id="pdf-canvas-4" style="width: 100%;"></canvas>
+                            </div>
+                            <div class="col-6">
+                                <canvas id="pdf-canvas-10" style="width: 100%;"></canvas>
+                            </div>
+                        </div>
+
+                        <h6>
+                            <i class="abstract_size">
+                                <strong>Fig. 4.</strong>The architecture of the Environment-Robust Adapter (ERA).
+                            </i>
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experiments -->
+        <section class="page-section" style="background-color: #f0f0f0;" id="experiments">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                        <h2>Experiments</h2>
+                    </div>
+                </div>
+                <div style="height: 2rem;"></div>
+
+                <!--Quantitative Comparison-->
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h4 class="h4_size" style="text-align: justify;">【Quantitative Comparison】</h4>
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Table 1.</strong> Quantitative comparison with state-of-the-art methods on the UIIS dataset.
+                        </h6>
+                        <img src="./assets/img/table1.png" alt="" style="width: 80%;">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div style="height: 2rem;"></div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Table 2.</strong> Quantitative comparisons with state-of-the-arts methods on the USIS10K datasets.
+                        </h6>
+                        <img src="./assets/img/table2.png" alt="" style="width: 50%;">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div style="height: 2rem;"></div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Table 3.</strong> Quantitative comparison with different fine-tuning methods on UIIS dataset using Swin Transformer backbones.
+                        </h6>
+                        <img src="./assets/img/table3.png" alt="" style="width: 80%;">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div style="height: 2rem;"></div>
+
+                <!--Qualitative Comparison-->
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h4 class="h4_size" style="text-align: justify;">【Qualitative Comparison】</h4>
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Fig. 5.</strong> Qualitative comparison with state-of-the-art underwater-specific methods on the UIIS dataset, using Swin Transformer (top) and ConvNeXt V2 (bottom) backbones.
+                        </h6>
+                        <img src="./assets/img/Fig5.png" alt="" style="width: 100%;">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div style="height: 2rem;"></div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Fig. 6.</strong> Qualitative comparison with state-ofthe-art terrestrial methods on the UIIS dataset, using Swin Transformer (top) and ConvNeXt V2 s(bottom) backbones.
+                        </h6>
+                        <img src="./assets/img/Fig6.png" alt="" style="width: 50%;">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div style="height: 2rem;"></div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Fig. 7.</strong> Qualitative comparison with different fine-tuning methods on the UIIS dataset. Swin Transformer backbone and 1× training schedule is adopted.
+                        </h6>
+                        <img src="./assets/img/Fig7.png" alt="" style="width: 50%;">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div style="height: 2rem;"></div>
+
+                <!--Qualitative Results-->
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h4 class="h4_size" style="text-align: justify;">【Qualitative Results】</h4>
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Fig. 8.</strong> Visualization of prediction results on samples from the USIS10K dataset, using our BARD-ERA method with Swin Transformer backbones.
+                        </h6>
+                        <img src="./assets/img/home.png" alt="" style="width: 100%;">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div style="height: 2rem;"></div>
+
+                <!--Ablation Studies-->
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h4 class="h4_size" style="text-align: justify;">【Ablation Studies】</h4>
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Table 4.</strong> Effectiveness of each component. Swin-Transformer backbone and 1× training schedule is adopted.
+                        </h6>
+                        <img src="./assets/img/table4.png" alt="" style="width: 60%;">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div style="height: 2rem;"></div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-1"></div>
+                    <div class="col-5">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Table 5.</strong> Effectiveness of refinement method.
+                        </h6>
+                        <img src="./assets/img/table5.png" alt="" style="width: 100%;">
+                    </div>
+                    <div class="col-5">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            <strong>Table 6.</strong> Effectiveness of boundary-aware loss.
+                        </h6>
+                        <img src="./assets/img/table6.png" alt="" style="width: 96%;">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div style="height: 2rem;"></div>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="page-section" style="background-color: #ffffff;" id="references">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                        <h2>References</h2>
+                    </div>
+                <div style="height: 1rem;"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [1] Derya Akkaynak, Tali Treibitz, Tom Shlesinger, Yossi Loya, Raz Tamir, and David Iluz. What is the space of attenuation coefficients in underwater computer vision? In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 4931–4940, 2017.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [2] Han Cai, Chuang Gan, Ligeng Zhu, and Song Han. Tinytl: Reduce memory, not parameters for efficient on-device learning. Advances in Neural Information Processing Systems, 33:11285–11297, 2020.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [3] Zhaowei Cai and Nuno Vasconcelos. Cascade r-cnn: Delving into high quality object detection. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 6154–6162, 2018.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [4] Kai Chen, JiaqiWang, Jiangmiao Pang, Yuhang Cao, Yu Xiong, Xiaoxiao Li, Shuyang Sun,Wansen Feng, Ziwei Liu, Jiarui Xu, et al. Mmdetection: Open mmlab detection toolbox and benchmark. arXiv preprint arXiv:1906.07155, 2019.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [5] Shoufa Chen, Chongjian Ge, Zhan Tong, Jiangliu Wang, Yibing Song, Jue Wang, and Ping Luo. Adaptformer: Adapting vision transformers for scalable visual recognition. Advances in Neural Information Processing Systems, 35:16664–16678, 2022.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [6] Bowen Cheng, IshanMisra, Alexander G Schwing, Alexander Kirillov, and Rohit Girdhar. Masked attention mask transformer for universal image segmentation. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 1290–1299, 2022.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [7] Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei. Imagenet: A large-scale hierarchical image database. In 2009 IEEE conference on computer vision and pattern recognition, pages 248–255. Ieee, 2009.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [8] Nahuel E Garcia-D’Urso, Alejandro Galan-Cuenca, Pau Climent-Pe´rez,Marcelo Saval-Calvo, Jorge Azorin-Lopez, and Andres Fuster-Guillo. Efficient instance segmentation using deep learning for species identification in fish markets. In 2022 International Joint Conference on Neural Networks (IJCNN), pages 1–8. IEEE, 2022.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [9] Angeliki Giannou, Shashank Rajput, and Dimitris Papailiopoulos. The expressive power of tuning only the norm layers. arXiv preprint arXiv:2302.07937, 8, 2023.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [10] Kaiming He, Georgia Gkioxari, Piotr Dolla´r, and Ross Girshick. Mask r-cnn. In Proceedings of the IEEE international conference on computer vision, pages 2961–2969, 2017.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [11] Neil Houlsby, Andrei Giurgiu, Stanislaw Jastrzebski, Bruna Morrone, Quentin De Laroussilhe, Andrea Gesmundo,Mona Attariyan, and Sylvain Gelly. Parameter-efficient transfer learning for nlp. In International conference on machine learning, pages 2790–2799. PMLR, 2019.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [12] Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. Lora: Low-rank adaptation of large language models. arXiv preprint arXiv:2106.09685, 2021.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [13] Md Jahidul Islam, Youya Xia, and Junaed Sattar. Fast underwater image enhancement for improved visual perception. IEEE Robotics and Automation Letters, 5(2):3227–3234, 2020.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [14] Qiuping Jiang, Yuese Gu, Chongyi Li, Runmin Cong, and Feng Shao. Underwater image enhancement quality evaluation: Benchmark dataset and objective metric. IEEE Transactions on Circuits and Systems for Video Technology, 32(9):5959–5974, 2022.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [15] Alexander Kirillov, Yuxin Wu, Kaiming He, and Ross Girshick. Pointrend: Image segmentation as rendering. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 9799–9808, 2020.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [16] Shijie Lian and others. Diving into underwater: Segment anything model guided underwater salient instance segmentation and a large-scale dataset. In ICML, 2024.
+                        </h6>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [17] Shijie Lian, Hua Li, Runmin Cong, Suqi Li, Wei Zhang, and Sam Kwong. Watermask: Instance segmentation for underwater imagery. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 1305–1315, 2023.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [18] Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dolla´r, and C Lawrence Zitnick. Microsoft coco: Common objects in context. In Computer Vision–ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part V 13, pages 740–755. Springer, 2014.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [19] Risheng Liu, Xin Fan, Ming Zhu, Minjun Hou, and Zhongxuan Luo. Real-world underwater enhancement: Challenges, benchmarks, and solutions under natural light. IEEE transactions on circuits and systems for video technology, 30(12):4861–4875, 2020.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [20] Yen-Cheng Liu, Chih-Yao Ma, Junjiao Tian, Zijian He, and Zsolt Kira. Polyhistor: Parameter efficient multi-task adaptation for dense vision tasks. Advances in Neural Information Processing Systems, 35:36889–36901, 2022a.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [21] Ze Liu, Yutong Lin, Yue Cao, Han Hu, Yixuan Wei, Zheng Zhang, Stephen Lin, and Baining Guo. Swin transformer: Hierarchical vision transformer using shifted windows. In Proceedings of the IEEE/CVF international conference on computer vision, pages 10012–10022, 2021.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [22] Zhuang Liu, HanziMao, Chao-YuanWu, Christoph Feichtenhofer, Trevor Darrell, and Saining Xie. A convnet for the 2020s. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 11976–11986, 2022b.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [23] Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan, Edward Yang, Zachary DeVito, Zeming Lin, Alban Desmaison, Luca Antiga, and Adam Lerer. Automatic differentiation in pytorch. Advances in neural information processing systems, 2017.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [24] Dingjie Peng and Wataru Kameyama. Simple and efficient vision backbone adapter for image semantic segmentation. In Asian Conference on Machine Learning, pages 1071–1086. PMLR, 2024.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [25] Chenyang Si, Weihao Yu, Pan Zhou, Yichen Zhou, Xinchao Wang, and Shuicheng Yan. Inception transformer. Advances in Neural Information Processing Systems, 35:23495–23509, 2022.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [26] Robert Tinn, Hao Cheng, Yu Gu, Naoto Usuyama, Xiaodong Liu, Tristan Naumann, Jianfeng Gao, and Hoifung Poon. Fine-tuning large neural language models for biomedical natural language processing. Patterns, 4(4), 2023.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [27] Xinlong Wang, Rufeng Zhang, Tao Kong, Lei Li, and Chunhua Shen. Solov2: Dynamic and fast instance segmentation. Advances in Neural information processing systems, 33:17721–17732, 2020.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [28] Yinhuai Wang, Yujie Hu, Jiwen Yu, and Jian Zhang. Gan prior based null-space learning for consistent super-resolution. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, pages 2724–2732, 2023a.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [29] Yinhuai Wang, Jiwen Yu, and Jian Zhang. Zero-shot image restoration using denoising diffusion null-space model. The Eleventh International Conference on Learning Representations, 2023b.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [30] Jingjing Xu, Xu Sun, Zhiyuan Zhang, Guangxiang Zhao, and Junyang Lin. Understanding and improving layer normalization. Advances in neural information processing systems, 32, 2019.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [31] Dongshuo Yin, Leiyi Hu Bin Li, and Youqun Zhang. Adapter is all you need for tuning visual tasks. arXiv preprint arXiv:2311.15010, 2023.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [32] Jason Yosinski, Jeff Clune, Yoshua Bengio, and Hod Lipson. How transferable are features in deep neural networks? Advances in neural information processing systems, 27, 2014.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [33] Elad Ben Zaken, Shauli Ravfogel, and Yoav Goldberg. Bitfit: Simple parameter-efficient fine-tuning for transformer-based masked language-models. arXiv preprint arXiv:2106.10199, 2021.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [34] Gang Zhang, Xin Lu, Jingru Tan, Jianmin Li, Zhaoxiang Zhang, Quanquan Li, and Xiaolin Hu. Refinemask: Towards high-quality instance segmentation with fine-grained features. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 6861–6869, 2021.
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h6 class="h6_size" style="text-align: justify; line-height: 200%;">
+                            [35] Lvmin Zhang, Anyi Rao, and Maneesh Agrawala. Adding conditional control to text-to-image diffusionmodels. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 3836–3847, 2023.
+                        </h6>
+                    </div>
+                </div>                
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="page-section" style="background-color: #f0f0f0;" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                        <h2>Contact Information</h2>
+                    </div>
+                    <div style="height: 1rem;"></div>
+                    <div class="col-12">
+                        <h6 class="h6_size" style="text-align: center; line-height: 200%;">
+                            Pin-Chi Pan, and Soo-Chang Pei {r12942103@ntu.edu.tw,mail; peisc@ntu.edu.tw}
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Citation -->
+        <section class="page-section" style="background-color: #ffffff;" id="citation">
+            <div class="container px-4 px-lg-5 h-100" >
+                <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                        <h2>Citation</h2>
+                    </div>
+                    <div style="height: 1rem;"></div>
+                    <div class="col-12" align="center">
+                        <div style="text-align: center; width: fit-content;">
+                            <div style="background-color: #f5f5f5; max-width: 65vw; overflow-x: auto; padding: 25px; border-radius: 25px; text-align: justify;">
+                                <nobr>
+                                    <code class="h6_size">
+                                        @InProceedings{pmlr-vXXX-PanPei2025bardera, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;title     = {Boundary-Aware Refinement with Environment-Robust Adapter Tuning for Underwater Instance Segmentation}, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;author    = {Pan, Pin-Chi and Pei, Soo-Chang}, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;booktitle = {Proceedings of The 17th Asian Conference on Machine Learning}, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;year      = {2025}, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;month     = {Dec}, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;publisher = {PMLR}, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;series    = {Proceedings of Machine Learning Research}, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;volume    = {XXX}, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;pages     = {---}, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;url       = {https://proceedings.mlr.press/vXXX/pan25a.html} <br>
+                                        }   
+
+                                    </code>
+                                </nobr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class=" py-5" style="background-color: #f8f8f8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                        <h2>Acknowledgements</h2>
+                    </div>
+                    <div style="height: 1rem;"></div>
+                    <div class="col-12">
+                        <h6 class="h6_size" style="text-align: center; line-height: 200%;">
+                            This webpage template was refered from Phillip Isola and Richard Zhang and Wen-Li Wei. Thanks a lot.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 1rem;"></div>
+            <div class="container px-4 px-lg-5">
+                <div class="small text-center text-muted">
+                    Copyright &copy; 2025 Pin-Chi Pan
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+
+<script>
+    $(function(){
+        window.setInterval(function(){
+            var mobile_flag = isMobile(); // true爲PC端，false爲手機端
+            var window_w = $(window).width();
+
+            if(mobile_flag || window_w < 550){
+                //$('#title').text('GLA-Net');
+                $('header.masthead').css('height', '100vh');
+                $('header.masthead').css('padding-top', '10rem');
+                $('header.masthead').css('padding-bottom', 'calc(10rem - 4.5rem)');
+                $('header.masthead').css('background-position', 'center)');
+                $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("assets/img/home2.png")');
+                $('header.masthead').css('background-position', 'center');
+                $('header.masthead').css('background-repeat', 'no-repeat');
+                $('header.masthead').css('background-attachment', 'scroll');
+                $('header.masthead').css('background-size', 'cover');
+            }
+            else{
+                //$('#title').text('Global-Local Awareness Network (GLA-Net)');
+                $('header.masthead').css('padding-top', '10rem');
+                $('header.masthead').css('padding-bottom', 'calc(10rem - 4.5rem)');
+                $('header.masthead').css('background-position', 'center)');
+                $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("assets/img/home.png")');
+                $('header.masthead').css('background-position', 'center');
+                $('header.masthead').css('background-repeat', 'no-repeat');
+                $('header.masthead').css('background-attachment', 'scroll');
+                $('header.masthead').css('background-size', 'cover');
+            }
+        }, 100);
+    });
+
+    function isMobile() {
+        var userAgentInfo = navigator.userAgent;
+
+        var mobileAgents = [ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad","iPod"];
+
+        var mobile_flag = false;
+
+        //根據userAgent判斷是否是手機
+        for (var v = 0; v < mobileAgents.length; v++) {
+            if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
+                mobile_flag = true;
+                break;
+            }
+        }
+
+        var screen_width = window.screen.width;
+        var screen_height = window.screen.height;    
+
+        //根據屏幕分辨率判斷是否是手機
+        if(screen_width < 500 && screen_height < 800){
+            mobile_flag = true;
+        }
+
+        return mobile_flag;
+    }
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+<script>
+    function renderPdf(pdfPath, canvasId) {
+    const loadingTask = pdfjsLib.getDocument(pdfPath);
+    loadingTask.promise.then(pdf => {
+      pdf.getPage(1).then(page => {
+        const scale = 1.5;
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.getElementById(canvasId);
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport
+        };
+        page.render(renderContext);
+      });
+    });
+  }
+
+  renderPdf('./assets/img/Fig3.pdf', 'pdf-canvas-3');
+  renderPdf('./assets/img/Fig4.pdf', 'pdf-canvas-4');
+  renderPdf('./assets/img/Fig10.pdf', 'pdf-canvas-10');
+</script>
+
+
